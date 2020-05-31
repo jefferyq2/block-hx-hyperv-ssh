@@ -8,7 +8,7 @@ $HxClusterIP = 192.168.0.100
 # Set HyperFlex Service Controller VM IP
 $ServiceControllerVmIp = 192.168.0.104
 
-# Block SSH Access on to HyperFlex Cluster IP
+# Block SSH Access to HyperFlex Cluster IP
 Add-VMNetworkAdapterExtendedAcl -VMName "StCtlVM" -LocalIPAddress $HxClusterIP -Action "Deny" -Direction "Inbound" -LocalPort 22 -Protocol "TCP" -Weight 10
 
 # Block SSH Access to HyperFlex Service Controller VM IP
